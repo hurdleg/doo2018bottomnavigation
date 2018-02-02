@@ -12,7 +12,7 @@ import java.util.List;
 
 import doors.open.ottawa.fragments.FavoritesFragment;
 import doors.open.ottawa.fragments.FiltersFragment;
-import doors.open.ottawa.fragments.HomeFragment;
+import doors.open.ottawa.fragments.BuildingsFragment;
 
 /**
  * Demonstrate bottom navigation for DOO app.
@@ -34,7 +34,7 @@ import doors.open.ottawa.fragments.HomeFragment;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG_FRAGMENT_HOME      = "tag_frag_home";
+    private static final String TAG_FRAGMENT_BUILDINGS = "tag_frag_buildings";
     private static final String TAG_FRAGMENT_FAVORITES = "tag_frag_favorites";
     private static final String TAG_FRAGMENT_FILTERS   = "tag_frag_filters";
 
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         switch (item.getItemId()) {
                             case R.id.navigation_home:
-                                switchFragment(0, TAG_FRAGMENT_HOME);
+                                switchFragment(0, TAG_FRAGMENT_BUILDINGS);
                                 return true;
                             case R.id.navigation_favorites:
                                 switchFragment(1, TAG_FRAGMENT_FAVORITES);
@@ -71,17 +71,17 @@ public class MainActivity extends AppCompatActivity {
         this.initFragmentsList();
 
         // Set the 0th Fragment to be displayed by default.
-        this.switchFragment(0, TAG_FRAGMENT_HOME);
+        this.switchFragment(0, TAG_FRAGMENT_BUILDINGS);
     }
 
     @Override
     public void onResume() {
-        this.switchFragment(0, TAG_FRAGMENT_HOME);
+        this.switchFragment(0, TAG_FRAGMENT_BUILDINGS);
         super.onResume();
     }
 
     private void initFragmentsList() {
-        Fragment homeFragment = new HomeFragment();
+        Fragment homeFragment = new BuildingsFragment();
         Fragment favoritesFragment = new FavoritesFragment();
         Fragment filtersFragment = new FiltersFragment();
 
