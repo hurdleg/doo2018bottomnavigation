@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         switch (item.getItemId()) {
-                            case R.id.navigation_home:
+                            case R.id.navigation_buildings:
                                 switchFragment(0, TAG_FRAGMENT_BUILDINGS);
                                 return true;
                             case R.id.navigation_favorites:
@@ -81,13 +81,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initFragmentsList() {
-        Fragment homeFragment = new BuildingsFragment();
-        Fragment favoritesFragment = new FavoritesFragment();
-        Fragment filtersFragment = new FiltersFragment();
-
-        mFragments.add(homeFragment);
-        mFragments.add(favoritesFragment);
-        mFragments.add(filtersFragment);
+        mFragments.add(new BuildingsFragment());
+        mFragments.add(new FavoritesFragment());
+        mFragments.add(new FavoritesFragment());
     }
 
     private void switchFragment(int pos, String tag) {
